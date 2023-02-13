@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SampleXamarinForms.Views.RequestPage"
+    Title="{Binding Title}"
+    xmlns:local="clr-namespace:SampleXamarinForms.ViewModels"  
+    xmlns:model="clr-namespace:SampleXamarinForms.Models">
+
+
+    <RefreshView x:DataType="local:RequestViewModel">
+        <StackLayout Padding="10">
+            <Button Text="make request"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:RequestViewModel}}, Path=ItemTapped}"
+                    FontSize="16"/>
+
+
+            <Label x:Name="ChoiceDescription"
+                   Text="{Binding DisplayText}"/>
+
+        </StackLayout>
+
+
+    </RefreshView>
+
+
+
+</ContentPage>
+
